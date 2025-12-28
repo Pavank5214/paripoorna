@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 8080;
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5177",
+  "https://buildtrack.pavankumar.site",
   "https://paripoorna-s299.vercel.app", // frontend
 ];
 

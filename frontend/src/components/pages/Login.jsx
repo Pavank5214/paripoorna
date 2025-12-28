@@ -83,7 +83,8 @@ const Login = () => {
       </div>
 
       {/* Right Column - Login Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 relative z-10">
+      <div className="w-full lg:w-1/2 flex items-start lg:items-center justify-center p-6 sm:p-12 pt-16 lg:pt-12 relative z-10">
+
         <div className="w-full max-w-md">
           <div className="text-center mb-10 lg:hidden">
             <h1 className="text-3xl font-black text-white uppercase tracking-tight">
