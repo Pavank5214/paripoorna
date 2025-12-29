@@ -19,18 +19,13 @@ const allowedOrigins = [
 app.use(express.json());
 
 // ✅ Updated CORS setup
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
+origin: (origin, callback) => {
+  // Allow any origin for mobile/preview access
+  callback(null, true);
+},
+  credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+      allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
