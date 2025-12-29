@@ -1,8 +1,20 @@
 import axios from 'axios';
 
+// Helper to determine the correct base URL
+const getBaseUrl = () => {
+  let url = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080/api';
+
+  // If running locally (not production) and accessing via IP/Network
+  // but the config points to localhost, try to be smart and use the same hostname
+  if (import.meta.env.DEV && url.includes('localhost') && window.location.hostname !== 'localhost') {
+    url = url.replace('localhost', window.location.hostname);
+  }
+  return url;
+};
+
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080/api',
+  baseURL: getBaseUrl(),
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
