@@ -83,11 +83,11 @@ const Sidebar = () => {
 
             {/* Sidebar Container */}
             <div className={`
-        fixed inset-y-0 left-0 z-50 transition-all duration-300 transform 
+        fixed top-0 left-0 h-[100dvh] z-50 transition-all duration-300 transform 
         ${mobileOpen ? 'translate-x-0' : '-translate-x-full'}
         md:relative md:translate-x-0 
         ${isOpen ? 'w-72' : 'w-20'}
-        flex flex-col shadow-2xl h-screen
+        flex flex-col shadow-2xl
         bg-slate-900 text-slate-300 border-r border-slate-800
       `}>
 
@@ -132,6 +132,7 @@ const Sidebar = () => {
                             to="/profile"
                             className={`flex items-center gap-3 flex-1 min-w-0 group cursor-pointer p-1 rounded-lg hover:bg-slate-900 transition-colors ${!isOpen ? 'justify-center' : ''}`}
                             title="Go to Profile"
+                            onClick={() => setMobileOpen(false)}
                         >
                             <div className="h-10 w-10 rounded bg-slate-800 text-amber-500 group-hover:text-amber-400 group-hover:border-amber-500/50 flex flex-shrink-0 items-center justify-center text-lg font-bold border border-slate-700 transition-colors">
                                 {user?.name?.charAt(0) || 'U'}
